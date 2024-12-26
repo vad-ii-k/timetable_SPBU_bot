@@ -73,9 +73,7 @@ async def change_message_to_loading(message: Message) -> None:
     :param message:
     """
     if message.content_type == ContentType.DOCUMENT:
-        await message.edit_caption(
-            business_connection_id=message.business_connection_id, caption=_("🕒 <i>Загрузка...</i>")
-        )
+        await message.edit_caption(caption=_("🕒 <i>Загрузка...</i>"))
     else:
         await message.edit_text("⏳")
 
